@@ -1,12 +1,18 @@
 import requests
 
 
-def weather_city(city: str):
-    url = f'https://wttr.in/{city}?M?nTqu&lang=ru'
-    response = requests.get(url)
+def check_weather_city(city: str):
+    params = {'M':'','n':'','T':'','q':'','u':'','lang': 'ru'}
+    url = f'https://wttr.in/{city}'
+    response = requests.get(url=url,params=params)
+    response.raise_for_status()
     return response.text
 
 
-print(weather_city('Череповец'),
-      weather_city('Шереметьево'),
-      weather_city('Лондон'))
+
+
+cities = ['Шереметьево', 'Череповец','Лондон']
+
+for city in cities:
+    print(check_weather_city(city))
+
