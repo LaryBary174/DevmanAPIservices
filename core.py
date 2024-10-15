@@ -9,10 +9,11 @@ def check_weather_city(city: str):
     return response.text
 
 
-
+def check_weather_cities(cities: list):
+    for city in cities:
+        print(check_weather_city(city))
 
 cities = ['Шереметьево', 'Череповец','Лондон']
 
-for city in cities:
-    print(check_weather_city(city))
-
+if __name__ == "__main__":
+    check_weather_cities(cities)
