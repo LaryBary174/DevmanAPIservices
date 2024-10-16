@@ -17,9 +17,6 @@ def shorten_link(token: str, url: str):
     return result
 
 
-short_url = 'https://vk.cc/cCD8fz'
-
-
 def count_clicks(token: str, short_url_key: str):
     urlAPI = 'https://api.vk.ru/method/utils.getLinkStats'
     params = {'access_token': token, 'v': '5.199',
